@@ -23,7 +23,8 @@ public class Programa {
 		
 		ProdutoService ps = new ProdutoService();
 		
-		double soma = ps.filtroSoma(list);
+		//Agora é só passar a expressão lambda como predicado
+		double soma = ps.filtroSoma(list, p -> p.getNome().charAt(0) == 'T');
 		
 		System.out.println("Soma = "+ String.format("%.2f", soma));
 
